@@ -50,13 +50,13 @@ Here is a list of all the default variables for this role, which are also availa
 # @see http://docs.ansible.com/ansible/user_module.html
 #
 # users:
-#   - username: foobar              (required)
+#   - username: foobar              #(required)
 #     name: Foo Bar
 #     uid: 1000
 #     group: staff
-#     password: xxxxx               (a hash created with: mkpasswd)
-#     groups: ["adm", "www-data"]
-#     append: no                    (only append groups, leave others)
+#     password: xxxxx               #(a hash created with: mkpasswd)
+#     groups: ["adm", "www-data"]   #(we can put groups here, but better members in groups)
+#     append: no                    #(only append groups, leave others)
 #     home_mode: "0750"
 #     home_create: yes
 #     home: /path/to/user/home
@@ -76,7 +76,21 @@ Here is a list of all the default variables for this role, which are also availa
 #     shell: /bin/bash
 #     update_password: always
 #
-
+# System groups (don't call it group! it's already used by ansible)
+# os_groups:
+#  name: superadmin
+#    members:
+#    - user1
+#    - deploy
+#    sodoer: without-password
+#  name: adminsys
+#    members:
+#    - user1
+#    - user2
+#    - user3
+#    - user4
+#    sodoer: with-password
+#
 # list of users to add
 users: []
 # users home directory

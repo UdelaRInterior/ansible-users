@@ -1,11 +1,24 @@
 ---
+## Dealing with packages
+## It should be better to install sudo only if ther is a sudoers group
+- name: install sudo
+  apt: 
+    name: sudo
+    state: present
+
 ## Dealing with groups
+
+- name: ver os_groups
+  debug: 
+    var: os_groups
+    verbosity: 3
 
 - name: Adding groups declared in groups
   group:
-    name: "{{item.name}}"
+    name: "{{ item.name }}"
     state: present
-  with_items: "{{ groups }}"
+  with_items: "{{ os_groups }}"
+  when: os_groups is defined and os_groups 
 
 # We could automatically crete groups defined for users, but no in groups
 ## would be better here just check for consistency between groups[*].name and users[*].groups[*] 
@@ -26,8 +39,13 @@
     state: present
   with_items: "{{ users_groups | default([]) }}"
 
-!
 ## Dealing with users and attributes
+
+- name: ver users
+  debug: 
+    var: users
+    verbosity: 3
+
 - name: Adding users
   user:
     name: "{{ item.username }}"
@@ -107,8 +125,30 @@
 ## Dealing with groups' membership
 
 - name: groups' loop to add declared members to groups
-  insert_tasks: add_group_members.yml
-  loop: "{{ groups }}"
+  include_tasks: add_group_members.yml
+  loop: "{{ os_groups }}"
   loop_control:
     loop_var: current_group
   when: os_groups is defined
+
+## Dealing with groups' sudo authorizations
+
+- name: groups with sudo access without password
+  template: 
+    src: etc/sudoers.d/without-password.j2
+    dest: /etc/sudoers.d/{{item.name}}
+    owner: root
+    group: root
+    mode: 0440
+  with_items: "{{ os_groups }}"
+  when: (item.sudoers is defined) and (item.sudoers == 'without-password')
+
+- name: groups with sudo access with password
+  template: 
+    src: etc/sudoers.d/with-password.j2
+    dest: /etc/sudoers.d/{{item.name}}
+    owner: root
+    group: root
+    mode: 0440
+  with_items: "{{ os_groups }}"
+  when:  (item.sudoers is defined) and (item.sudoers == 'with-password')
