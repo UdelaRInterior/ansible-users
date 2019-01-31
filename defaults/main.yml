@@ -65,3 +65,5 @@ users_authorized_keys_exclusive: no
 # list of users to be removed
 users_remove: []
 
+## el "omit" no funciona para la definición del shell, lo que pone el campo a un valor vacío (se debería omitir el parámetro ansible, no solo su valor)
+default_shell: /bin/bash

@@ -38,9 +38,7 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ users_groups | default([]) }}"
-
-## Dealing with users and attributes
-
+  
 - name: ver users
   debug: 
     var: users
@@ -62,7 +60,7 @@
     ssh_key_passphrase: "{{ item.ssh_key_password | default(omit) }}"
     ssh_key_bits: "{{ item.ssh_key_bits | default(users_ssh_key_bits) }}"
     createhome: "{{ item.home_create | default(omit) }}"
-    shell: "{{ item.shell | default(omit) }}"
+    shell: "{{ item.shell | default(default_shell) }}"
     update_password: "{{ item.update_password | default(omit) }}"
   with_items: "{{ users }}"
 
