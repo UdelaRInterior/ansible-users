@@ -20,7 +20,7 @@
   with_items: "{{ os_groups }}"
   when: os_groups is defined and os_groups 
 
-# We could automatically crete groups defined for users, but no in groups
+# We could automatically create groups defined for users, but no in groups
 ## would be better here just check for consistency between groups[*].name and users[*].groups[*] 
 #- name: Adding group user's belong to
 #  group: 
