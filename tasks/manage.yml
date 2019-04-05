@@ -35,13 +35,8 @@
 - name: Adding secondary groups
   group:
     name: "{{ item.name }}"
-<<<<<<< HEAD
-    gid:  "{{ item.gid | default( '' ) }}"
-    system:  "{{ item.system | default( no ) }}"
-=======
     gid: "{{ item.gid | default ('') }}"
     system: "{{ item.system | default (no) }}"
->>>>>>> origin/master
     state: present
   with_items: "{{ users_groups | default([]) }}"
   
