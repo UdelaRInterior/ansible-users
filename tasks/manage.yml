@@ -11,7 +11,7 @@
 - name: ver os_groups
   debug: 
     var: os_groups
-    verbosity: 3
+    verbosity: 1
 
 - name: Adding groups declared in groups
   group:
@@ -35,14 +35,16 @@
 
 - name: Adding secondary groups
   group:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    gid: "{{ item.gid | default ('') }}"
+    system: "{{ item.system | default (no) }}"
     state: present
   with_items: "{{ users_groups | default([]) }}"
   
 - name: ver users
   debug: 
     var: users
-    verbosity: 3
+    verbosity: 1
 
 - name: Adding users
   user:
