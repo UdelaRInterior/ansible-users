@@ -1,38 +1,36 @@
-# Ansible weareinteractive.users role
+# Ansible UdelaRInterior.users role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-users.svg)](https://travis-ci.org/weareinteractive/ansible-users)
 [![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.sudo-blue.svg)](https://galaxy.ansible.com/list#/roles/1385)
 [![GitHub tag](https://img.shields.io/github/tag/weareinteractive/ansible-users.svg)](https://github.com/weareinteractive/ansible-users/releases)
 [![GitHub stars](https://img.shields.io/github/stars/weareinteractive/ansible-users.svg?style=social&label=Star)](https://github.com/weareinteractive/ansible-users)
 
-> `weareinteractive.users` is an [Ansible](http://www.ansible.com) role which:
+> `UdelaRInterior.users` is an [Ansible](http://www.ansible.com) role, forked from `weareinteractive.users`, which:
 >
-> * manges users
+> * manges users and groups
 > * manages user's private key
 > * manages user's authorized keys
-
-**Note:**
-
-> Since Ansible Galaxy switched all role names to the organization name, this role has moved from `franklinkim.users` to `weareinteractive.users`!
+> * manages user's password, profile and several settings
+> * manages user's groups membership
 
 ## Installation
 
-Using `ansible-galaxy`:
-
-```shell
-$ ansible-galaxy install weareinteractive.users
-```
-
-Using `requirements.yml`:
+To be able to update later and eventually to modify it, prefer using `requirements.yml` with the git source:
 
 ```yaml
-- src: weareinteractive.users
-```
-
-Using `git`:
+- name: users
+  src: https://github.com/UdelaRInterior/ansible-users.git
+  ```
+And then download it with `ansible-galaxy`:
 
 ```shell
-$ git clone https://github.com/weareinteractive/ansible-users.git weareinteractive.users
+$ ansible-galaxy install -r requirements.yml -g
+```
+
+Using `git`, you'll have to be carefull to folder name :
+
+```shell
+$ git clone https://github.com/UdelaRInterior/ansible-users.git users
 ```
 
 ## Dependencies
@@ -111,7 +109,6 @@ users_authorized_keys_exclusive: no
 users_remove: []
 
 ```
-
 
 ## Usage
 

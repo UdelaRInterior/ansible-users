@@ -6,3 +6,4 @@
     groups: "{{ current_group.name }}"
     append: yes
   loop: "{{ current_group.members }}"
+  when: current_group.members is defined and current_group.members|length > 0 

@@ -11,7 +11,7 @@
 - name: ver os_groups
   debug: 
     var: os_groups
-    verbosity: 3
+    verbosity: 1
 
 - name: Adding groups declared in groups
   group:
@@ -20,7 +20,7 @@
   with_items: "{{ os_groups }}"
   when: os_groups is defined and os_groups 
 
-# We could automatically crete groups defined for users, but no in groups
+# We could automatically create groups defined for users, but no in groups
 ## would be better here just check for consistency between groups[*].name and users[*].groups[*] 
 #- name: Adding group user's belong to
 #    name: "{{ item }}" 
@@ -35,15 +35,20 @@
 - name: Adding secondary groups
   group:
     name: "{{ item.name }}"
+<<<<<<< HEAD
     gid:  "{{ item.gid | default( '' ) }}"
     system:  "{{ item.system | default( no ) }}"
+=======
+    gid: "{{ item.gid | default ('') }}"
+    system: "{{ item.system | default (no) }}"
+>>>>>>> origin/master
     state: present
   with_items: "{{ users_groups | default([]) }}"
   
 - name: ver users
   debug: 
     var: users
-    verbosity: 3
+    verbosity: 1
 
 - name: Adding users
   user:
