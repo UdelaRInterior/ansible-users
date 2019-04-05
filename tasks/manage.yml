@@ -23,7 +23,6 @@
 # We could automatically crete groups defined for users, but no in groups
 ## would be better here just check for consistency between groups[*].name and users[*].groups[*] 
 #- name: Adding group user's belong to
-#  group: 
 #    name: "{{ item }}" 
 #  with_items: "{{ users | json_query('[*].groups[*]') | flatten | sort | unique }}"
 
@@ -35,7 +34,9 @@
 
 - name: Adding secondary groups
   group:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    gid:  "{{ item.gid | default( '' ) }}"
+    system:  "{{ item.system | default( no ) }}"
     state: present
   with_items: "{{ users_groups | default([]) }}"
   

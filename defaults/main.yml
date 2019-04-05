@@ -32,18 +32,21 @@
 #
 # System groups (don't call it group! it's already used by ansible)
 # os_groups:
-#  name: superadmin
-#    members:
-#    - user1
-#    - deploy
-#    sodoer: without-password
-#  name: adminsys
-#    members:
-#    - user1
-#    - user2
-#    - user3
-#    - user4
-#    sodoer: with-password
+# - name: superadmin
+#   gid: XXXX
+#   system: no
+#   members:
+#   - user1
+#   - deploy
+#   sodoer: without-password
+#
+# - name: adminsys
+#   members:
+#   - user1
+#   - user2
+#   - user3
+#   - user4
+#   sodoer: with-password
 #
 
 # list of users to add
