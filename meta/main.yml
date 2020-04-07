@@ -1,10 +1,22 @@
 ---
 galaxy_info:
-  author: franklin <franklin@weareinteractive.com>
-  company: We Are Interactive
-  description: Manages users
+  role_name: users
+  author: 
+  - franklin <franklin@weareinteractive.com>
+  - Daniel Viñar Ulriksen <dvinar@cci.edu.uy>
+  company: Red Unidades Informáticas UdelaR Interior (@UdelaRInterior)
+  description: Manages linux users and groups
   min_ansible_version: 2.4
-  license: MIT
+
+  # Choose a valid license ID from https://spdx.org - some suggested licenses:
+  # - BSD-3-Clause (default)
+  # - MIT
+  # - GPL-2.0-or-later
+  # - GPL-3.0-only
+  # - Apache-2.0
+  # - CC-BY-4.
+  license: GPL-3.0-only
+  
   # Optionally specify the branch Galaxy will use when accessing the GitHub
   # repo for this role. During role install, if no tags are available,
   # Galaxy will use this branch. During import Galaxy will access files on
@@ -118,7 +130,8 @@ galaxy_info:
   #  - any
   - name: Debian
     versions:
-    - all
+    - stretch
+    - buster
   #  - etch
   #  - jessie
   #  - lenny
@@ -134,6 +147,8 @@ galaxy_info:
   # alphanumeric characters. Maximum 20 tags per role.
   galaxy_tags:
     - system
+    - linux
+    - debian
     - users
     - user
     - ssh
