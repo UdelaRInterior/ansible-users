@@ -2,8 +2,10 @@
 ## add all members of a group. Separate file for nested loop
 - name: add group's members
   user:
-    name: "{{ item }}"
-    groups: "{{ current_group.name }}"
+    name: "{{ member }}"
+    groups: "{{ os_group.name }}"
     append: yes
-  loop: "{{ current_group.members }}"
-  when: current_group.members is defined and current_group.members|length > 0 
+  loop: "{{ os_group.members }}"
+  loop_control:
+    loop_var: member
+  when: os_group.members is defined and os_group.members|length > 0 
