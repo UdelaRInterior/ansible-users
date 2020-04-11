@@ -1,16 +1,28 @@
+<a name="3.0.0">https://github.com/UdelaRInterior/ansible-users/releases/tag/v3.0.0</a>
+# 3.0.0 (2020-04-09)
+
+#### Features
+
+* change in password management (role takes the password and salt, no longer the passworsd hash)
+* copy password to created of modified account ([4c443ed](https://github.com/UdelaRInterior/ansible-users/tree/4c443edc54ebd8e1645cc29cda8fbe1090baf172/))
+
+
+<a name="2.0.0">https://github.com/UdelaRInterior/ansible-users/releases/tag/v2.0.0</a>
+# 2.0.0 (2020-04-07)
+
+#### Features
+
+* advanced groups management ([3859f61](https://github.com/UdelaRInterior/ansible-users/blob/3859f61c36c3659dbe8709ebf4422ba6bda2eb13/))
+
 <a name="1.11.0"></a>
 ## 1.11.0 (2018-12-11)
-
 
 #### Features
 
 *   adopt galaxy role name ([55a97e7d](https://github.com/weareinteractive/ansible-users/commit/55a97e7da4444af230a1621e7cd68ed80ec41a3a))
 
-
-
 <a name="1.10.0"></a>
 ## 1.10.0 (2018-09-13)
-
 
 #### Features
 
@@ -20,102 +32,70 @@
 
 *   add skip for missing attributes ([11db5434](https://github.com/weareinteractive/ansible-users/commit/11db5434588e868b76d16404b242d2731333b966))
 
-
-
 <a name="1.9.3"></a>
 ### 1.9.3 (2018-05-13)
 
-
-
-
 <a name="1.9.2"></a>
 ### 1.9.2 (2018-01-25)
-
 
 #### Features
 
 *   change gitignore rules ([6e50c90e](https://github.com/weareinteractive/ansible-users/commit/6e50c90e2d7a43392492bb0a9e662dd5f3da6188))
 *   add makefile format ([5c51d0fe](https://github.com/weareinteractive/ansible-users/commit/5c51d0fe1d99240a95dbfa791da62de3e2c57ab6))
 
-
-
 <a name="1.9.1"></a>
 ### 1.9.1 (2017-11-10)
 
-
-
-
 <a name="1.8.0"></a>
 ## 1.8.0 (2017-06-21)
-
 
 #### Features
 
 *   bump ansible version to 2.0 ([b4c39b06](https://github.com/weareinteractive/ansible-users/commit/b4c39b0653ac425a34b5162af0309465cd7284c8))
 *   add append flag to users ([c4bffe1b](https://github.com/weareinteractive/ansible-users/commit/c4bffe1b7cc44d557b2b88ac1925f19c92f85f6d))
 
-
-
 <a name="1.7.1"></a>
 ### 1.7.1 (2017-02-14)
-
 
 #### Features
 
 *   add update_password flag ([d3511ffe](https://github.com/weareinteractive/ansible-users/commit/d3511ffee448b691965ad4b976a7b32e7dc8824d))
 
-
-
 <a name="1.7.0"></a>
 ## 1.7.0 (2016-08-02)
-
 
 #### Features
 
 *   add `users_remove` ([d06f860d](https://github.com/weareinteractive/ansible-users/commit/d06f860d064da9115331224ec16fcfe5db91fa82))
 *   optimize authorized keys management ([382d7c2e](https://github.com/weareinteractive/ansible-users/commit/382d7c2e9f7edc987c2f8b0679fc27cdfdc9c6b6))
 
-
-
 <a name="1.6.1"></a>
 ### 1.6.1 (2016-05-30)
 
-
-
-
 <a name="1.6.0"></a>
 ## 1.6.0 (2016-05-09)
-
 
 #### Features
 
 *   add password and shell variables ([93b48f0e](https://github.com/weareinteractive/ansible-users/commit/93b48f0eb0e9c547717a5679f9dbc14a18d32b17))
 
-
-
 <a name="1.5.0"></a>
 ## 1.5.0 (2016-04-18)
-
 
 #### Bug Fixes
 
 *   fix 'when' clause when adding the primary user group ([9fec282d](https://github.com/weareinteractive/ansible-users/commit/9fec282d4635eeb808837c4ce9ddfed25ce7bffd))
 *   fix deprecation warnings in ansible 2.0
 
-
 <a name="1.4.0"></a>
 ## 1.4.0 (2016-04-14)
-
 
 #### Features
 
 *   make sure groups are available ([232fe41b](https://github.com/weareinteractive/ansible-users/commit/232fe41b47372177492789e7a9f1ee5bb851de2e))
 
-
-
 <a name="1.3.0"></a>
 ## 1.3.0 (2015-12-11)
-
 
 #### Breaking Changes
 
