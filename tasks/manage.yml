@@ -59,7 +59,7 @@
     comment: "{{ user.name | default(omit) }}"
     system: "{{ user.system | default(omit) }}"
     generate_ssh_key: "{{ user.ssh_key_generate | default(omit) }}"
-    group: "{{ omit if user.group is defined and user.group == item.username else (user.group if user.group is defined else (users_group if users_group is defined else omit)) }}"
+    group: "{{ omit if user.group is defined and user.group == item.username else (user.group if user.group is defined else (users_group if users_group else omit)) }}"
     groups: "{{ user.groups|join(',') if user.groups is defined else users_groups|join(',')}}"
     append: "{{ user.append | default(omit) }}"
     password: "{{ user.password | password_hash( 'sha512', user.pwd_salt | default ( users_pwd_salt ) ) if user.password is defined else omit }}"
