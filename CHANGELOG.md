@@ -1,5 +1,18 @@
-<a name="3.0.0">https://github.com/UdelaRInterior/ansible-users/releases/tag/v3.0.0</a>
-# 3.0.0 (2020-04-09)
+# Changelog for [udelarinterior.users](https://galaxy.ansible.com/udelarinterior/users) Ansible role
+
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/UdelaRInterior/ansible-users/releases/tag/v3.0.1) (2020-04-12)
+
+#### Bugs
+
+* fix group default value that affects v3.0.0, rolling back to previous code ([581cb7b](https://github.com/UdelaRInterior/ansible-users/commit/581cb7be48b90ecfa62fa135e840fbf8cd761054)) 
+
+<a name="3.0.0"></a>
+## [3.0.0](https://github.com/UdelaRInterior/ansible-users/releases/tag/v3.0.0) (2020-04-09)
+
+#### Bugs
+
+* This version has a bug on the group default value for user Ansible module and playbooks may fail if users_group not defined  
 
 #### Features
 
@@ -7,8 +20,8 @@
 * copy password to created of modified account ([4c443ed](https://github.com/UdelaRInterior/ansible-users/tree/4c443edc54ebd8e1645cc29cda8fbe1090baf172/))
 
 
-<a name="2.0.0">https://github.com/UdelaRInterior/ansible-users/releases/tag/v2.0.0</a>
-# 2.0.0 (2020-04-07)
+<a name="2.0.0"></a>
+## [2.0.0](https://github.com/UdelaRInterior/ansible-users/releases/tag/v2.0.0) (2020-04-07)
 
 #### Features
 
