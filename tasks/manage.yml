@@ -148,7 +148,7 @@
     name: "{{ user }}"
     state: absent
     remove: yes
-  loop: "{{ users }}"
+  loop: "{{ users_remove }}"
   loop_control:
     loop_var: user
 

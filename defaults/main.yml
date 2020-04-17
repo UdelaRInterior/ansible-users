@@ -10,7 +10,7 @@
 #   group: staff                  # the primary group of the user. Defaults to `users_group` variable if defined, else omit (i.e. `username` as primary group)
 #   password: xxxxx               # a password, to be used in: user.password | password_hash( 'sha512', user.pwd_salt | default ( users_pwd_salt ) )
 #   pwd_salt: yyyy                # a salt value for password hash creation
-#   groups: ["adm", "www-data"]   # legacy way to pur users in groups, better now to use `os_group` structure
+#   groups: ["adm", "www-data"]   # legacy way to put users in groups, better now to use `os_group` structure
 #   append: no                    #(only append groups, leave others)
 #   home_mode: "0750"
 #   home_create: yes
