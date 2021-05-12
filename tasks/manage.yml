@@ -5,6 +5,7 @@
   apt: 
     name: sudo
     state: present
+    update_cache: yes
 
 ## Dealing with groups
 
